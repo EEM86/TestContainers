@@ -27,7 +27,7 @@ public class AbstractIntegrationTest {
 
   static final PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:14-alpine")
       .withCopyFileToContainer(
-          MountableFile.forClasspathResource("/talks-schema.sql"),
+          MountableFile.forClasspathResource("talks-schema.sql"),
           "/docker-entrypoint-initdb.d/init.sql"
           );
 
