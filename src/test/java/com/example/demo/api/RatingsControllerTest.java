@@ -1,8 +1,10 @@
 package com.example.demo.api;
 
 import com.example.demo.model.Rating;
+import com.example.demo.repository.TalksRepository;
 import com.example.demo.support.AbstractIntegrationTest;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static io.restassured.RestAssured.given;
 import static org.awaitility.Awaitility.await;
