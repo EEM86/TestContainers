@@ -17,6 +17,7 @@ import org.testcontainers.utility.DockerImageName;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, properties = {
     "spring.datasource.url=jdbc:tc:postgresql:14-alpine://local/workshop"
+
 })
 public class AbstractIntegrationTest {
 
@@ -33,6 +34,7 @@ public class AbstractIntegrationTest {
   @DynamicPropertySource
   public static void configureKafka(DynamicPropertyRegistry registry) {
     kafka.start();
+    registry.add("spring.kafka.bootstrap-servers", kafka::getBootstrapServers);
   }
 
 
